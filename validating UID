@@ -1,0 +1,41 @@
+import sys
+
+def is_valid_uid(uid):
+    # Rule 5: Exactly 10 characters
+    if len(uid) != 10:
+        return False
+    
+    # Rule 3: Only alphanumeric characters
+    if not uid.isalnum():
+        return False
+    
+    # Rule 4: No character should repeat
+    # Converting to a set removes duplicates; if length changes, there were repeats
+    if len(set(uid)) != 10:
+        return False
+    
+    # Rule 1 & 2: At least 2 uppercase and 3 digits
+    upper_count = 0
+    digit_count = 0
+    
+    for char in uid:
+        if char.isupper():
+            upper_count += 1
+        elif char.isdigit():
+            digit_count += 1
+            
+    return upper_count >= 2 and digit_count >= 3
+
+# Read number of test cases
+try:
+    line = sys.stdin.readline()
+    if line:
+        t = int(line.strip())
+        for _ in range(t):
+            uid = sys.stdin.readline().strip()
+            if is_valid_uid(uid):
+                print("Valid")
+            else:
+                print("Invalid")
+except ValueError:
+    pass
