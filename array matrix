@@ -1,0 +1,20 @@
+import numpy
+
+# Set alignment to match legacy NumPy format
+numpy.set_printoptions(legacy='1.13')
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read array A and B
+a = numpy.array([input().split() for _ in range(n)], int)
+b = numpy.array([input().split() for _ in range(n)], int)
+
+# Perform operations
+print(a + b)
+print(a - b)
+print(a * b)
+print(a // b)
+print(a % b)
+print(a ** b)
+
