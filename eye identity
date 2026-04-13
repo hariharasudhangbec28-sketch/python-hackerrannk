@@ -1,0 +1,10 @@
+import numpy
+
+# This line ensures the output alignment matches the expected format
+numpy.set_printoptions(legacy='1.13')
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Use numpy.eye to create the N x M array with the main diagonal as 1s
+print(numpy.eye(n, m))
