@@ -1,0 +1,22 @@
+n = int(input())
+# Initialize the set with integers
+s = set(map(int, input().split()))
+
+num_commands = int(input())
+
+for _ in range(num_commands):
+    # Split the input into command name and (if present) the value
+    command = input().split()
+    method_name = command[0]
+    
+    if method_name == "pop":
+        s.pop()
+    elif method_name == "remove":
+        # remove() takes the integer value as an argument
+        s.remove(int(command[1]))
+    elif method_name == "discard":
+        # discard() takes the integer value as an argument
+        s.discard(int(command[1]))
+
+# Print the sum of the remaining elements
+print(sum(s))
