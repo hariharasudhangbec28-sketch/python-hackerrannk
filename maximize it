@@ -1,0 +1,25 @@
+from itertools import product
+
+# Step 1: Read input K (number of lists) and M (modulo value)
+K, M = map(int, input().split())
+
+# Step 2: Read each list and pre-calculate the squares of its elements
+# We use a list of lists to store these squared values
+lists = []
+for _ in range(K):
+    # The first integer in each line is the count of elements (Ni), which we skip
+    row = list(map(int, input().split()))[1:]
+    lists.append([x**2 for x in row])
+
+# Step 3: Use itertools.product to generate all possible combinations 
+# of picking one squared element from each list
+max_val = 0
+for combo in product(*lists):
+    # Calculate (sum of squares) % M for the current combination
+    current_sum = sum(combo) % M
+    # Update max_val if the current combination yields a higher result
+    if current_sum > max_val:
+        max_val = current_sum
+
+# Step 4: Print the maximum value found
+print(max_val)
