@@ -1,0 +1,15 @@
+import math
+
+# 1. Read input lengths
+ab = int(input())
+bc = int(input())
+
+# 2. Calculate angle in radians
+angle_rad = math.atan(ab / bc)
+
+# 3. Convert to degrees
+angle_deg = math.degrees(angle_rad)
+
+# 4. Round to nearest integer and format output
+# Use round() which handles the .5 case according to standard rounding
+print(f"{round(angle_deg)}\u00b0")
