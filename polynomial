@@ -1,0 +1,10 @@
+import numpy
+
+# Read the polynomial coefficients as a list of floats
+coefficients = list(map(float, input().split()))
+
+# Read the point x at which to evaluate the polynomial
+x = float(input())
+
+# Use numpy.polyval to evaluate the polynomial at point x
+print(numpy.polyval(coefficients, x))
