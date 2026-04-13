@@ -1,0 +1,16 @@
+# Read the number of English newspaper subscribers (skip)
+_ = input()
+# Read roll numbers and convert to a set of integers
+english_set = set(map(int, input().split()))
+
+# Read the number of French newspaper subscribers (skip)
+_ = input()
+# Read roll numbers and convert to a set of integers
+french_set = set(map(int, input().split()))
+
+# Calculate the symmetric difference
+# This finds students subscribed to exactly one newspaper
+result = english_set.symmetric_difference(french_set)
+
+# Print the total count of students in that set
+print(len(result))
