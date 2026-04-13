@@ -1,0 +1,25 @@
+import re
+
+# Read the number of test cases
+t = int(input())
+
+# Regex Pattern Breakdown:
+# ^[+-]?  -> Starts with an optional + or -
+# [0-9]*  -> Followed by zero or more digits
+# \.      -> Followed by exactly one decimal point
+# [0-9]+  -> Followed by one or more digits (this invalidates '12.')
+# $       -> End of the string
+pattern = r'^[+-]?[0-9]*\.[0-9]+$'
+
+for _ in range(t):
+    s = input()
+    
+    # Check regex match and float conversion safety simultaneously
+    if re.match(pattern, s):
+        try:
+            float(s)
+            print(True)
+        except ValueError:
+            print(False)
+    else:
+        print(False)
