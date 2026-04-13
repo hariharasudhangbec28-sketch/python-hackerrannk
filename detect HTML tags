@@ -1,0 +1,29 @@
+from html.parser import HTMLParser
+
+# Step 1: Define the custom parser class
+class MyHTMLParser(HTMLParser):
+    # This handles both regular start tags <tag> and self-closing tags <tag />
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        for name, value in attrs:
+            print(f"-> {name} > {value}")
+
+    # Explicitly handle self-closing tags in the same way
+    def handle_startendtag(self, tag, attrs):
+        print(tag)
+        for name, value in attrs:
+            print(f"-> {name} > {value}")
+
+# Step 2: Read input
+# We join all lines into one string to ensure the parser 
+# handles multi-line tags and comments correctly
+import sys
+input_data = sys.stdin.read().splitlines()
+
+if input_data:
+    n = int(input_data[0])
+    html_code = "\n".join(input_data[1:n+1])
+
+    # Step 3: Run the parser
+    parser = MyHTMLParser()
+    parser.feed(html_code)
