@@ -1,0 +1,21 @@
+import re
+
+# Read the number of test cases
+n = int(input())
+
+# The regex pattern:
+# ^      : Start of the string
+# [789]  : The first character must be 7, 8, or 9
+# \d{9}  : Followed by exactly 9 more digits (total of 10)
+# $      : End of the string
+pattern = r'^[789]\d{9}$'
+
+for _ in range(n):
+    # Read each mobile number string
+    number = input().strip()
+    
+    # Check if the number matches the pattern
+    if re.match(pattern, number):
+        print("YES")
+    else:
+        print("NO")
