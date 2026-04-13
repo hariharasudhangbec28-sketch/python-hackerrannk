@@ -1,0 +1,29 @@
+from html.parser import HTMLParser
+
+# Step 1: Define a subclass of HTMLParser
+class MyHTMLParser(HTMLParser):
+    # Method for opening tags
+    def handle_starttag(self, tag, attrs):
+        print(f"Start : {tag}")
+        for name, value in attrs:
+            print(f"-> {name} > {value}")
+
+    # Method for closing tags
+    def handle_endtag(self, tag):
+        print(f"End   : {tag}")
+
+    # Method for empty (self-closing) tags like <br />
+    def handle_startendtag(self, tag, attrs):
+        print(f"Empty : {tag}")
+        for name, value in attrs:
+            print(f"-> {name} > {value}")
+
+# Step 2: Read the number of lines and the HTML content
+n = int(input())
+html_code = ""
+for _ in range(n):
+    html_code += input() + "\n"
+
+# Step 3: Instantiate the parser and feed it the full HTML string
+parser = MyHTMLParser()
+parser.feed(html_code)
