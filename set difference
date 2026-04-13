@@ -1,0 +1,14 @@
+# Read input for English newspaper subscribers
+_ = input()
+english_set = set(map(int, input().split()))
+
+# Read input for French newspaper subscribers
+_ = input()
+french_set = set(map(int, input().split()))
+
+# Calculate the difference: students in English set but not in French set
+# The .difference() method or the - operator can be used
+only_english = english_set.difference(french_set)
+
+# Print the total count of those students
+print(len(only_english))
