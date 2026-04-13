@@ -1,0 +1,12 @@
+import numpy
+
+# Read the space-separated integers from input
+# Split them into a list and convert each to an integer
+arr = list(map(int, input().split()))
+
+# Convert the list into a NumPy array
+my_array = numpy.array(arr)
+
+# Reshape the 1D array into a 3x3 2D array
+# reshape(rows, columns)
+print(numpy.reshape(my_array, (3, 3)))
