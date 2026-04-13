@@ -1,0 +1,15 @@
+# Read n and m
+n, m = map(int, input().split())
+
+# Read the initial array
+array = list(map(int, input().split()))
+
+# Read sets A and B (using set for O(1) lookups)
+set_a = set(map(int, input().split()))
+set_b = set(map(int, input().split()))
+
+# Calculate happiness
+# Gain 1 for items in A, lose 1 for items in B
+happiness = sum((1 if x in set_a else -1 if x in set_b else 0) for x in array)
+
+print(happiness)
