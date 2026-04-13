@@ -1,0 +1,11 @@
+# Read input for English newspaper subscribers
+_ = input()
+english_set = set(map(int, input().split()))
+
+# Read input for French newspaper subscribers
+_ = input()
+french_set = set(map(int, input().split()))
+
+# Find the intersection and print the count
+# The & operator or .intersection() finds elements common to both sets
+print(len(english_set & french_set))
