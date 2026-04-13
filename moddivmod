@@ -1,0 +1,13 @@
+# 1. Read the two integers
+a = int(input())
+b = int(input())
+
+# 2. Print integer division (//)
+print(a // b)
+
+# 3. Print modulo result (%)
+print(a % b)
+
+# 4. Print the result of divmod(a, b)
+# This automatically returns the tuple (a // b, a % b)
+print(divmod(a, b))
