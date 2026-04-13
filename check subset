@@ -1,0 +1,15 @@
+# 1. Read the number of test cases
+t = int(input())
+
+for _ in range(t):
+    # Read set A
+    num_a = int(input())
+    set_a = set(map(int, input().split()))
+    
+    # Read set B
+    num_b = int(input())
+    set_b = set(map(int, input().split()))
+    
+    # 2. Perform the subset check
+    # Returns True if every element of set_a is in set_b
+    print(set_a.issubset(set_b))
