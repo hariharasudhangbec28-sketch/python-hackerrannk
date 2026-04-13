@@ -1,0 +1,14 @@
+# Read English subscription data
+n = int(input())
+english_set = set(map(int, input().split()))
+
+# Read French subscription data
+m = int(input())
+french_set = set(map(int, input().split()))
+
+# Calculate the union of both sets
+# You can use the .union() method or the | operator
+at_least_one = english_set.union(french_set)
+
+# Print the total number of unique students
+print(len(at_least_one))
