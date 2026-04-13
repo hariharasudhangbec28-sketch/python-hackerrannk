@@ -1,0 +1,17 @@
+import numpy
+
+# Set legacy print options to ensure output format matches the required one
+numpy.set_printoptions(legacy='1.13')
+
+# 1. Read the input for array A and B
+# map(int, input().split()) splits the string and converts elements to integers
+A = numpy.array(list(map(int, input().split())))
+B = numpy.array(list(map(int, input().split())))
+
+# 2. Compute and print the inner product
+# For 1-D arrays, inner product is the sum of element-wise products
+print(numpy.inner(A, B))
+
+# 3. Compute and print the outer product
+# This results in a matrix where each element is the product of elements from A and B
+print(numpy.outer(A, B))
