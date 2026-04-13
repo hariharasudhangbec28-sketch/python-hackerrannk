@@ -1,0 +1,19 @@
+import numpy
+
+# 1. Read the dimensions N and M
+n, m = map(int, input().split())
+
+# 2. Read the N lines of input to build the 2-D array
+# We use a list comprehension to read each row
+data = [list(map(int, input().split())) for _ in range(n)]
+my_array = numpy.array(data)
+
+# 3. Sum the elements along axis 0 (columns)
+# For the sample [[1, 2], [3, 4]], this results in [4, 6]
+sum_axis_0 = numpy.sum(my_array, axis=0)
+
+# 4. Find the product of the resulting sums
+# product(4, 6) = 24
+result = numpy.prod(sum_axis_0)
+
+print(result)
