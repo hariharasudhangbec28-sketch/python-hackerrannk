@@ -1,0 +1,22 @@
+import numpy
+
+# 1. Read the dimensions N and M
+n, m = map(int, input().split())
+
+# 2. Read the matrix data and convert to a NumPy array
+# We use a list comprehension to read each row efficiently
+data = [list(map(int, input().split())) for _ in range(n)]
+my_array = numpy.array(data)
+
+# 3. Calculate the mean along axis 1 (row-wise)
+# For [[1, 2], [3, 4]], this gives [1.5, 3.5]
+print(numpy.mean(my_array, axis=1))
+
+# 4. Calculate the variance along axis 0 (column-wise)
+# For [[1, 2], [3, 4]], the columns are [1, 3] and [2, 4]. 
+# Both have a variance of 1.0.
+print(numpy.var(my_array, axis=0))
+
+# 5. Calculate the standard deviation of the entire array (axis=None)
+# The default axis is None, which flattens the array first.
+print(round(numpy.std(my_array), 11))
