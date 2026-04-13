@@ -1,0 +1,19 @@
+import numpy
+
+# This ensures the output matches the required formatting
+numpy.set_printoptions(legacy='1.13')
+
+# 1. Read the input and convert it to a NumPy array of floats
+A = numpy.array(input().split(), float)
+
+# 2. Print the floor of each element
+# floor(1.1) -> 1.0
+print(numpy.floor(A))
+
+# 3. Print the ceiling of each element
+# ceil(1.1) -> 2.0
+print(numpy.ceil(A))
+
+# 4. Print the rint (round to nearest integer) of each element
+# rint(1.1) -> 1.0
+print(numpy.rint(A))
