@@ -1,0 +1,21 @@
+import re
+
+# Read input strings
+S = input().strip()
+k = input().strip()
+
+# Compile a regex with a positive lookahead for overlapping matches
+# We wrap the pattern in (?=(...)) to find the start index 
+# while keeping the cursor in place for the next match
+pattern = re.compile(f'(?=({re.escape(k)}))')
+
+matches = list(pattern.finditer(S))
+
+if not matches:
+    print("(-1, -1)")
+else:
+    for m in matches:
+        start = m.start()
+        # The length of the match is the length of k
+        end = start + len(k) - 1
+        print(f"({start}, {end})")
