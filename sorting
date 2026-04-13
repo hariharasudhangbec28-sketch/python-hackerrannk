@@ -1,0 +1,19 @@
+if __name__ == "__main__":
+    # Read n (rows) and m (columns)
+    n, m = map(int, input().split())
+    
+    # Store the table as a list of lists
+    rows = []
+    for _ in range(n):
+        rows.append(list(map(int, input().split())))
+    
+    # Read the sorting index k
+    k = int(input())
+    
+    # Sort the list using a lambda function as the key
+    # x[k] tells Python to sort based on the k-th element of each row
+    rows.sort(key=lambda x: x[k])
+    
+    # Print the sorted rows
+    for row in rows:
+        print(*row)
