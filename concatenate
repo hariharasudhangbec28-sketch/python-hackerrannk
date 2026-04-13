@@ -1,0 +1,18 @@
+import numpy
+
+# Read the dimensions N, M, and P
+n, m, p = map(int, input().split())
+
+# Read the N rows for the first array
+array_1 = numpy.array([input().split() for _ in range(n)], int)
+
+# Read the M rows for the second array
+array_2 = numpy.array([input().split() for _ in range(m)], int)
+
+# Concatenate along axis 0 (the default)
+result = numpy.concatenate((array_1, array_2), axis=0)
+
+# Print the concatenated array
+print(result)
+
+
