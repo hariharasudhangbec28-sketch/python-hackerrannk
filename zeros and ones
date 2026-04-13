@@ -1,0 +1,10 @@
+import numpy
+
+# Read the space-separated dimensions and convert to a tuple of integers
+shape = tuple(map(int, input().split()))
+
+# Print the array of zeros with integer type
+print(numpy.zeros(shape, dtype=int))
+
+# Print the array of ones with integer type
+print(numpy.ones(shape, dtype=int))
