@@ -1,0 +1,27 @@
+import re
+
+def transform_logic():
+    # Read the number of lines
+    try:
+        n = int(input())
+    except EOFError:
+        return
+
+    for _ in range(n):
+        line = input()
+        
+        # We use a loop or a specific regex to handle consecutive matches
+        # The pattern looks for ' && ' or ' || ' specifically
+        # (?<= ) is a positive lookbehind for a space
+        # (?= ) is a positive lookahead for a space
+        
+        # Replace &&
+        line = re.sub(r"(?<= )(&&)(?= )", "and", line)
+        
+        # Replace ||
+        line = re.sub(r"(?<= )(\|\|)(?= )", "or", line)
+        
+        print(line)
+
+if __name__ == "__main__":
+    transform_logic()
