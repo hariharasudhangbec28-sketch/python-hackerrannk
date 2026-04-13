@@ -1,0 +1,11 @@
+# 1. Read the three integers
+a = int(input())
+b = int(input())
+m = int(input())
+
+# 2. Print a to the power of b (a^b)
+print(pow(a, b))
+
+# 3. Print (a to the power of b) modulo m ( (a^b) % m )
+# Using three arguments in pow() is much faster than (a**b) % m
+print(pow(a, b, m))
