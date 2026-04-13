@@ -1,0 +1,6 @@
+# Read the input line as a string
+var = input()
+
+# Evaluate the string as a Python expression
+# Since the sample input includes 'print(...)', eval will execute that print statement.
+eval(var)
