@@ -1,0 +1,20 @@
+import numpy
+
+# 1. Read the dimension N for the NxN matrices
+n = int(input())
+
+# 2. Read the elements for matrix A
+# We use a list comprehension to collect N rows
+a_data = [list(map(int, input().split())) for _ in range(n)]
+A = numpy.array(a_data)
+
+# 3. Read the elements for matrix B
+b_data = [list(map(int, input().split())) for _ in range(n)]
+B = numpy.array(b_data)
+
+# 4. Compute the matrix product
+# For 2-D arrays, numpy.dot() performs standard matrix multiplication
+result = numpy.dot(A, B)
+
+# 5. Output the resulting matrix
+print(result)
