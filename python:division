@@ -1,0 +1,11 @@
+if __name__ == '__main__':
+    # Read the two integers from STDIN
+    a = int(input())
+    b = int(input())
+    
+    # Integer division using //
+    print(a // b)
+    
+    # Float division using /
+    print(a / b)
+
