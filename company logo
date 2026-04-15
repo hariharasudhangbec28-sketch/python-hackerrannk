@@ -1,0 +1,19 @@
+from collections import Counter
+
+if __name__ == '__main__':
+    # 1. Read the company name
+    s = input().strip()
+    
+    # 2. Count the frequency of each character
+    # Counter({'b': 3, 'a': 2, 'c': 2, ...})
+    counts = Counter(s)
+    
+    # 3. Sort the data
+    # We sort alphabetically first (x[0]), then by frequency descending (-x[1])
+    # This ensures that if frequencies are equal, the alphabetical order wins.
+    sorted_chars = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+    
+    # 4. Print the top 3
+    for char, count in sorted_chars[:3]:
+        print(f"{char} {count}")
+
