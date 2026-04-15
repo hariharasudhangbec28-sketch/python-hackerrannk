@@ -1,0 +1,28 @@
+from collections import OrderedDict
+
+# 1. Initialize the OrderedDict
+item_summary = OrderedDict()
+
+# 2. Read the number of items
+n = int(input())
+
+for _ in range(n):
+    # Split the input line into parts
+    data = input().split()
+    
+    # Everything except the last element is the item name
+    # The last element is the price
+    item_name = " ".join(data[:-1])
+    price = int(data[-1])
+    
+    # 3. Update the OrderedDict
+    # If the item exists, add the price to the current total
+    # If not, it creates the entry automatically
+    if item_name in item_summary:
+        item_summary[item_name] += price
+    else:
+        item_summary[item_name] = price
+
+# 4. Print the results in order of first occurrence
+for item, net_price in item_summary.items():
+    print(f"{item} {net_price}")
