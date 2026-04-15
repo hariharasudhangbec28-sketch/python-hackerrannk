@@ -1,0 +1,18 @@
+from itertools import permutations
+
+if __name__ == '__main__':
+    # 1. Read the input and split into the string and the integer k
+    line = input().split()
+    s = line[0]
+    k = int(line[1])
+    
+    # 2. Sort the string alphabetically first. 
+    # This ensures permutations are generated in lexicographic order.
+    sorted_s = sorted(s)
+    
+    # 3. Generate all permutations of length k
+    results = permutations(sorted_s, k)
+    
+    # 4. Join each tuple into a string and print on separate lines
+    for p in results:
+        print("".join(p))
