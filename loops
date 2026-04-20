@@ -1,0 +1,7 @@
+if __name__ == '__main__':
+    n = int(input())
+    
+    # Loop through every integer from 0 up to (but not including) n
+    for i in range(n):
+        # Print the square of the current number
+        print(i ** 2)
