@@ -1,0 +1,21 @@
+# 1. Read initial set A
+_ = int(input())  # Number of elements (not strictly needed)
+A = set(map(int, input().split()))
+
+# 2. Read number of operations
+num_ops = int(input())
+
+for _ in range(num_ops):
+    # Read operation name and set length (e.g., "intersection_update 10")
+    operation_info = input().split()
+    method_name = operation_info[0]
+    
+    # Read the second set's elements
+    other_set = set(map(int, input().split()))
+    
+    # 3. Perform the mutation dynamically
+    # getattr(A, "update")(other_set) is the same as A.update(other_set)
+    getattr(A, method_name)(other_set)
+
+# 4. Output the sum of the remaining elements
+print(sum(A))
